@@ -1,0 +1,40 @@
+<mvc:View 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	xmlns:l = "sap.ui.layout"
+	controllerName="MyApp.movies.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page 
+				title="{movies>cinemaName}-{
+						path:'movies>startDate', 
+						type: 'sap.ui.model.type.Date', 
+						formatOptions:{
+							source:{ pattern: 'MM/dd/yyyy/hh:mm:ss'},
+							relative:true,
+							relativeScale: 'auto'
+							}
+						}"
+				showNavButton="true"
+				class="sapUiResponsiveContentPadding"
+				navButtonPress="onNavBack">		
+				<content>
+					<FlexBox wrap="Wrap">
+						<l:VerticalLayout id="details" class="sapUiMediumMarginEnd sapUiSmallMarginBottom">
+								<core:Icon src="{movies>Icon}" size="3rem" class="sapUiMediumMarginBottom"/>
+								<Label text="Cinema Address" design="Bold" />
+								<Text text="{movies>cinemaAddress}" class="sapUiMediumMarginBottom"/>
+								<Label text="Special" design="Bold" />
+								<Text text="{movies>special}" class="sapUiMediumMarginBottom"/>
+								<Label text="Technical Details" design="Bold" />
+								<Text text="{movies>technicalDetails}" class="sapUiMediumMarginBottom"/>	
+						</l:VerticalLayout>
+						<Image width="100%" src="{movies>pic}"/>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

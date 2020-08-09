@@ -1,0 +1,17 @@
+<mvc:View 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" 
+	controllerName="MyApp.movies.controller.ObjectNotFound"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+	<MessagePage
+		title="Bummer!"
+		icon="sap-icon://video"
+		description="The Movie either expired or not made"
+		text="The Movie either expired or not made..."
+		id="page">
+		<customDescription>
+			<Link id="link" text="Back to Home Page" press=".onLinkPressed" />
+		</customDescription>		
+	</MessagePage>
+</mvc:View>
